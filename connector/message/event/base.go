@@ -3,12 +3,34 @@ package event
 import "encoding/json"
 
 type baseMessage struct {
-	BizCode    string   `json:"bizCode"`
-	BizData    bizDataM `json:"bizData"`
-	DevID      string   `json:"devId"`
-	ProductKey string   `json:"productKey"`
-	Ts         int64    `json:"ts"`
-	Uuid       string   `json:"uuid"`
+	baseMessageWithoutBizData
+	BizData bizDataM `json:"bizData"`
+}
+
+type baseMessageWithoutBizData struct {
+	BizCode    string `json:"bizCode"`
+	DevID      string `json:"devId"`
+	ProductKey string `json:"productKey"`
+	Ts         int64  `json:"ts"`
+	Uuid       string `json:"uuid"`
+}
+type DevicePropertyMessage struct {
+	baseMessageWithoutBizData
+	BizData devicePropertyBizData `json:"bizData"`
+}
+
+type deviceProperty struct {
+	Code  string      `json:"code"`
+	DpID  int         `json:"dpId"`
+	Time  int64       `json:"time"`
+	Value interface{} `json:"value"`
+}
+
+type devicePropertyBizData struct {
+	DevID      string           `json:"devId"`
+	DataID     string           `json:"dataId"`
+	ProductID  string           `json:"productId"`
+	Properties []deviceProperty `json:"properties"`
 }
 
 type bizDataM struct {
@@ -122,25 +144,6 @@ type StatusReportMessage struct {
 	baseMessage
 	DataId string             `json:"dataId"`
 	Status []statusReportItem `json:"status"`
-}
-
-type DevicePropertyMessage struct {
-	BizCode string `json:"bizCode"`
-	BizData struct {
-		DevID      string `json:"devId"`
-		DataID     string `json:"dataId"`
-		ProductID  string `json:"productId"`
-		Properties []struct {
-			Code  string      `json:"code"`
-			DpID  int         `json:"dpId"`
-			Time  int64       `json:"time"`
-			Value interface{} `json:"value"`
-		} `json:"properties"`
-	} `json:"bizData"`
-	DevID      string `json:"devId"`
-	ProductKey string `json:"productKey"`
-	Ts         int64  `json:"ts"`
-	Uuid       string `json:"uuid"`
 }
 
 type statusReportItem struct {
