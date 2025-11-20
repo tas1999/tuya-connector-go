@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"reflect"
 
+	"github.com/tas1999/tuya-connector-go/connector/logger"
 	"github.com/tas1999/tuya-connector-go/connector/message/event"
-	"github.com/tuya/tuya-connector-go/connector/logger"
-	"github.com/tuya/tuya-connector-go/connector/utils"
+	"github.com/tas1999/tuya-connector-go/connector/utils"
 )
 
 type messageFunc func([]byte)

@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tuya/tuya-connector-go/example/service"
+	"github.com/tas1999/tuya-connector-go/example/service"
 )
 
 func NewGinEngin() *gin.Engine {

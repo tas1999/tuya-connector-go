@@ -1,18 +1,18 @@
 package connector
 
 import (
-	_ "github.com/tuya/tuya-connector-go/connector/header"
-	_ "github.com/tuya/tuya-connector-go/connector/logger"
-	_ "github.com/tuya/tuya-connector-go/connector/message"
-	_ "github.com/tuya/tuya-connector-go/connector/sign"
-	_ "github.com/tuya/tuya-connector-go/connector/token"
+	_ "github.com/tas1999/tuya-connector-go/connector/header"
+	_ "github.com/tas1999/tuya-connector-go/connector/logger"
+	_ "github.com/tas1999/tuya-connector-go/connector/message"
+	_ "github.com/tas1999/tuya-connector-go/connector/sign"
+	_ "github.com/tas1999/tuya-connector-go/connector/token"
 
 	"context"
-	"github.com/tuya/tuya-connector-go/connector/constant"
-	"github.com/tuya/tuya-connector-go/connector/env"
-	"github.com/tuya/tuya-connector-go/connector/env/extension"
-	"github.com/tuya/tuya-connector-go/connector/httplib"
-	"github.com/tuya/tuya-connector-go/connector/logger"
+	"github.com/tas1999/tuya-connector-go/connector/constant"
+	"github.com/tas1999/tuya-connector-go/connector/env"
+	"github.com/tas1999/tuya-connector-go/connector/env/extension"
+	"github.com/tas1999/tuya-connector-go/connector/httplib"
+	"github.com/tas1999/tuya-connector-go/connector/logger"
 	"net/http"
 )
 

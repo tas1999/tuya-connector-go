@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/tuya/tuya-connector-go/connector"
-	"github.com/tuya/tuya-connector-go/connector/logger"
-	"github.com/tuya/tuya-connector-go/example/model"
+	"github.com/tas1999/tuya-connector-go/connector"
+	"github.com/tas1999/tuya-connector-go/connector/logger"
+	"github.com/tas1999/tuya-connector-go/example/model"
 	"io/ioutil"
 )
 

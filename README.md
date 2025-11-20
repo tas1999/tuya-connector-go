@@ -1,6 +1,6 @@
 [English](README.md) | [中文版](README_cn.md)
 
-[![License: Apache 2](https://img.shields.io/badge/license-Apache%202-green)](https://github.com/tuya/tuya-connector-go/blob/master/LICENSE 'License')
+[![License: Apache 2](https://img.shields.io/badge/license-Apache%202-green)](https://github.com/tas1999/tuya-connector-go/blob/master/LICENSE 'License')
 ![Version: 1.0.0](https://img.shields.io/badge/version-1.0.0-blue)
 
 The `tuya-connector-go` framework maps cloud APIs to local APIs based on simple configurations and flexible extension mechanisms. You can subscribe to the distribution of cloud messages as local events. You can put all the focus on business logic without taking care of server-side programming nor relational databases. The OpenAPI or message subscription process is simplified, so you can focus on service logic and promote development efficiency.
@@ -218,12 +218,12 @@ You can add the processing function for required events. The framework includes 
 
 ### Architecture of the framework
 
-![Integration of the framework](https://github.com/tuya/tuya-connector-go/blob/fetch-dev/assets/architect.jpg)
-![Integration and extensions](https://github.com/tuya/tuya-connector-go/blob/fetch-dev/assets/integration%26extension.jpg)
+![Integration of the framework](https://github.com/tas1999/tuya-connector-go/blob/fetch-dev/assets/architect.jpg)
+![Integration and extensions](https://github.com/tas1999/tuya-connector-go/blob/fetch-dev/assets/integration%26extension.jpg)
 
 ### Core module design
 
-![Design description](https://github.com/tuya/tuya-connector-go/blob/fetch-dev/assets/tuya-connector-go.png)
+![Design description](https://github.com/tas1999/tuya-connector-go/blob/fetch-dev/assets/tuya-connector-go.png)
 
 ## Technical support
 

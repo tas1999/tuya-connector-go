@@ -7,5 +7,5 @@ require (
 	github.com/satori/go.uuid v1.2.0
 	github.com/stretchr/testify v1.7.0
 	github.com/tuya/pulsar-client-go v0.0.0-20210318030624-2c99a816287b
-	github.com/tuya/tuya-connector-go v1.0.5
+	github.com/tas1999/tuya-connector-go v1.0.5
 )
