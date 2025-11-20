@@ -50,22 +50,14 @@ type commandItem struct {
 }
 
 type DeviceSignalMessage struct {
-	BizCode string `json:"bizCode"`
-	BizData struct {
-		DevID      string `json:"devId"`
-		DataID     string `json:"dataId"`
-		ProductID  string `json:"productId"`
-		Properties []struct {
-			Code  string `json:"code"`
-			DpID  int    `json:"dpId"`
-			Time  int64  `json:"time"`
-			Value string `json:"value"`
-		} `json:"properties"`
-	} `json:"bizData"`
-	DevID      string `json:"devId"`
-	ProductKey string `json:"productKey"`
-	Ts         int64  `json:"ts"`
-	Uuid       string `json:"uuid"`
+	baseMessage
+	ReportData []deviceSignalItem `json:"reportData"`
+}
+
+type deviceSignalItem struct {
+	Memory int64 `json:"memory"`
+	Rssi   int   `json:"rssi"`
+	T      int64 `json:"t"`
 }
 
 type DpNameUpdateMessage struct {
@@ -133,19 +125,27 @@ type StatusReportMessage struct {
 }
 
 type DevicePropertyMessage struct {
-	baseMessage
-	DataId     string               `json:"dataId"`
-	Properties []devicePropertyItem `json:"properties"`
+	BizCode string `json:"bizCode"`
+	BizData struct {
+		DevID      string `json:"devId"`
+		DataID     string `json:"dataId"`
+		ProductID  string `json:"productId"`
+		Properties []struct {
+			Code  string `json:"code"`
+			DpID  int    `json:"dpId"`
+			Time  int64  `json:"time"`
+			Value string `json:"value"`
+		} `json:"properties"`
+	} `json:"bizData"`
+	DevID      string `json:"devId"`
+	ProductKey string `json:"productKey"`
+	Ts         int64  `json:"ts"`
+	Uuid       string `json:"uuid"`
 }
 
 type statusReportItem struct {
 	Code  string      `json:"code"`
 	T     int64       `json:"t"`
-	Value interface{} `json:"value"`
-}
-type devicePropertyItem struct {
-	Code  string      `json:"code"`
-	Time  int64       `json:"time"`
 	Value interface{} `json:"value"`
 }
 
