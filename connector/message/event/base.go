@@ -131,10 +131,10 @@ type DevicePropertyMessage struct {
 		DataID     string `json:"dataId"`
 		ProductID  string `json:"productId"`
 		Properties []struct {
-			Code  string `json:"code"`
-			DpID  int    `json:"dpId"`
-			Time  int64  `json:"time"`
-			Value string `json:"value"`
+			Code  string      `json:"code"`
+			DpID  int         `json:"dpId"`
+			Time  int64       `json:"time"`
+			Value interface{} `json:"value"`
 		} `json:"properties"`
 	} `json:"bizData"`
 	DevID      string `json:"devId"`
