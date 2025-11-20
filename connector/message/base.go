@@ -12,10 +12,10 @@ import (
 
 	"github.com/tas1999/tuya-connector-go/connector/constant"
 	"github.com/tas1999/tuya-connector-go/connector/env"
-	"github.com/tas1999/tuya-connector-go/connector/env/extension"
 	"github.com/tas1999/tuya-connector-go/connector/logger"
 	"github.com/tas1999/tuya-connector-go/connector/utils"
 	"github.com/tuya/pulsar-client-go/core/manage"
+	"github.com/tuya/tuya-connector-go/connector/env/extension"
 )
 
 const (

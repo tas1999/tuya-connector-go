@@ -1,28 +1,26 @@
 package message
 
 import (
-	"fmt"
 	"testing"
 	"time"
 
 	"github.com/tas1999/tuya-connector-go/connector/constant"
-	"github.com/tas1999/tuya-connector-go/connector/env"
 	"github.com/tas1999/tuya-connector-go/connector/env/extension"
 	"github.com/tas1999/tuya-connector-go/connector/logger"
 	"github.com/tas1999/tuya-connector-go/connector/message/event"
 )
 
-func TestMain(m *testing.M) {
-	fmt.Println("init....")
-	env.Config = env.NewEnv()
-	env.Config.Init()
-	extension.SetMessage(constant.TUYA_MESSAGE, newMessageInstance)
-	if logger.Log == nil {
-		logger.Log = logger.NewDefaultLogger(env.Config.GetAppName(), env.Config.DebugMode())
-	}
-	fmt.Println("### iot core init success ###")
-	m.Run()
-}
+// func TestMain(m *testing.M) {
+// 	fmt.Println("init....")
+// 	env.Config = env.NewEnv()
+// 	env.Config.Init()
+// 	extension.SetMessage(constant.TUYA_MESSAGE, newMessageInstance)
+// 	if logger.Log == nil {
+// 		logger.Log = logger.NewDefaultLogger(env.Config.GetAppName(), env.Config.DebugMode())
+// 	}
+// 	fmt.Println("### iot core init success ###")
+// 	m.Run()
+// }
 
 func TestEventMsg(t *testing.T) {
 	extension.GetMessage(constant.TUYA_MESSAGE).InitMessageClient()
