@@ -50,14 +50,22 @@ type commandItem struct {
 }
 
 type DeviceSignalMessage struct {
-	baseMessage
-	ReportData []deviceSignalItem `json:"reportData"`
-}
-
-type deviceSignalItem struct {
-	Memory int64 `json:"memory"`
-	Rssi   int   `json:"rssi"`
-	T      int64 `json:"t"`
+	BizCode string `json:"bizCode"`
+	BizData struct {
+		DevID      string `json:"devId"`
+		DataID     string `json:"dataId"`
+		ProductID  string `json:"productId"`
+		Properties []struct {
+			Code  string `json:"code"`
+			DpID  int    `json:"dpId"`
+			Time  int64  `json:"time"`
+			Value string `json:"value"`
+		} `json:"properties"`
+	} `json:"bizData"`
+	DevID      string `json:"devId"`
+	ProductKey string `json:"productKey"`
+	Ts         int64  `json:"ts"`
+	Uuid       string `json:"uuid"`
 }
 
 type DpNameUpdateMessage struct {
