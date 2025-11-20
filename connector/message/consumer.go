@@ -5,7 +5,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/tas1999/tuya-connector-go/connector/logger"
+	"github.com/tuya/tuya-connector-go/connector/logger"
 
 	"github.com/tuya/pulsar-client-go/core/manage"
 	"github.com/tuya/pulsar-client-go/core/msg"
