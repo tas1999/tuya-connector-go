@@ -3,10 +3,11 @@ package message
 import (
 	"encoding/base64"
 	"encoding/json"
+	"reflect"
+
 	"github.com/tuya/tuya-connector-go/connector/logger"
 	"github.com/tuya/tuya-connector-go/connector/message/event"
 	"github.com/tuya/tuya-connector-go/connector/utils"
-	"reflect"
 )
 
 type messageFunc func([]byte)
@@ -57,6 +58,16 @@ func (c *client) receiveMsg() messageFunc {
 			fv.Call(params)
 			return
 		} else if protocol == event.PROTOCOL_DEVICE {
+			if code, ok := m["bizCode"]; ok {
+				c.mu.RLock()
+				f, ok := c.eventSubPool[event.GetMessageNameByType(code.(string))]
+				c.mu.RUnlock()
+				if !ok {
+					return
+				}
+				c.switchCode(code.(string), deData, f)
+			}
+		} else if protocol == event.PROTOCOL_DEVICE_DATA_REPORTING {
 			if code, ok := m["bizCode"]; ok {
 				c.mu.RLock()
 				f, ok := c.eventSubPool[event.GetMessageNameByType(code.(string))]
@@ -127,6 +138,8 @@ func (c *client) switchCode(code string, deData []byte, f interface{}) {
 		m = &event.AutomationExternalActionMessage{}
 	case event.SCENE_EXECUTE:
 		m = &event.SceneExecuteMessage{}
+	case event.DEVICE_PROPERTY:
+		m = &event.DevicePropertyMessage{}
 	default:
 		params[0] = reflect.ValueOf(string(deData))
 		fv.Call(params)

@@ -43,6 +43,7 @@ const (
 	DEVICE_DP_COMMAND = "deviceDpCommand"
 	// report device status data
 	STATUS_REPORT              = "statusReport"
+	DEVICE_PROPERTY            = "devicePropertyMessage"
 	AUTOMATION_EXTERNAL_ACTION = "automationExternalAction"
 	SCENE_EXECUTE              = "sceneExecute"
 )
@@ -69,11 +70,13 @@ const (
 	ROOM_SORT_MESSAGE                  = "RoomSortMessage"
 	DEVICE_DP_COMMAND_MESSAGE          = "DeviceDpCommandMessage"
 	STATUS_REPORT_MESSAGE              = "StatusReportMessage"
+	DEVICE_PROPERTY_MESSAGE            = "DevicePropertyMessage"
 	AUTOMATION_EXTERNAL_ACTION_MESSAGE = "AutomationExternalActionMessage"
 	SCENE_EXECUTE_MESSAGE              = "SceneExecuteMessage"
 )
 
 const (
-	PROTOCOL_STATUS = 4
-	PROTOCOL_DEVICE = 20
+	PROTOCOL_STATUS                = 4
+	PROTOCOL_DEVICE                = 20
+	PROTOCOL_DEVICE_DATA_REPORTING = 1000
 )

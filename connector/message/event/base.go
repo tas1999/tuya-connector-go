@@ -124,9 +124,20 @@ type StatusReportMessage struct {
 	Status []statusReportItem `json:"status"`
 }
 
+type DevicePropertyMessage struct {
+	baseMessage
+	DataId     string               `json:"dataId"`
+	Properties []devicePropertyItem `json:"properties"`
+}
+
 type statusReportItem struct {
 	Code  string      `json:"code"`
 	T     int64       `json:"t"`
+	Value interface{} `json:"value"`
+}
+type devicePropertyItem struct {
+	Code  string      `json:"code"`
+	Time  int64       `json:"time"`
 	Value interface{} `json:"value"`
 }
 
@@ -194,6 +205,8 @@ func GetMessageNameByType(v string) string {
 		return AUTOMATION_EXTERNAL_ACTION_MESSAGE
 	case SCENE_EXECUTE:
 		return SCENE_EXECUTE_MESSAGE
+	case DEVICE_PROPERTY:
+		return DEVICE_PROPERTY_MESSAGE
 	}
 	return ""
 }
