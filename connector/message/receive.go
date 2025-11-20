@@ -75,6 +75,7 @@ func (c *client) receiveMsg() messageFunc {
 				if !ok {
 					return
 				}
+				logger.Log.Debug(string(deData))
 				c.switchCode(code.(string), deData, f)
 			}
 		} else {
